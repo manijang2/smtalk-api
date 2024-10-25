@@ -1,4 +1,4 @@
-package me.smtalk.api;
+package me.smtalk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
