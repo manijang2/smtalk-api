@@ -1,9 +1,10 @@
 package me.smtalk.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,8 +18,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
 
+    @Column(unique = true)
+    @NotNull
+    @Size(min = 1)
     private String id;
+
+    @NotBlank
     private String password;
+
+    @NotBlank
     private String name;
 
     @Builder
